@@ -31,12 +31,46 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
-        <ImageView
+        <TextView
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src=""
+            android:drawableTop="@mipmap/wait_pay"
+            android:text="  代付款"
             />
-
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/wait_send_good"
+            android:text="    代发货"
+            />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/wait_receive_good"
+            android:text="     待收货"
+            />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/wait_evaluate"
+            android:text="     待评价"
+            />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/wait_refund"
+            android:text="       退款"
+            />
     </LinearLayout>
+    <ListView
+        android:id="@+id/fragment_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
 
 </LinearLayout>

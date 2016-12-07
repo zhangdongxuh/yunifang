@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
-import android.widget.GridView;
 import android.widget.RadioButton;
 
 import com.example.administrator.royalmufangtest.fragment.Fragment_fl;
@@ -57,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         transaction.show(fragment_sy);
         //提交事务
         transaction.commit();
+
     }
 
     /**
@@ -109,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
                     transaction.show(fragment_wd);
                     break;
 
-        }
-        transaction.commit();
+            }
+            transaction.commit();
 
         }
     };
