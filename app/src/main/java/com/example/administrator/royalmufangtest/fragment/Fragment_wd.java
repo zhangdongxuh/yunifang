@@ -1,6 +1,7 @@
 package com.example.administrator.royalmufangtest.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,8 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.example.administrator.royalmufangtest.LoginMainActivity;
+import com.example.administrator.royalmufangtest.MainActivity;
 import com.example.administrator.royalmufangtest.R;
+import com.example.administrator.royalmufangtest.adapter.ListMyAdapter;
 import com.example.administrator.royalmufangtest.bean.UserListBean;
 
 import java.util.ArrayList;
@@ -21,6 +26,7 @@ import java.util.List;
 public class Fragment_wd extends Fragment {
     private ListView flv;
     private List<UserListBean> list=new ArrayList<UserListBean>();
+    private TextView login;
 
 
     @Override
@@ -33,14 +39,32 @@ public class Fragment_wd extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_wd, null);
 
+        //初始化控件
         flv=(ListView)view.findViewById(R.id.fragment_lv);
+        login=(TextView)view.findViewById(R.id.tv_login);
+        //登录的点击事件
+        login.setOnClickListener(onlist);
+        //listview去分割线--------
+        flv.setDividerHeight(0);
 
+        //初始化数据
+        LoadData();
+        //我的界面listview适配器
+        ListMyAdapter adapter=new ListMyAdapter(list,getActivity());
+        flv.setAdapter(adapter);
 
         return view;
 
     }
-
-
+    //登录的点击事件
+    View.OnClickListener onlist=new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        //跳转至登录页面
+        Intent intent=new Intent(getActivity(), LoginMainActivity.class);
+        startActivity(intent);
+    }
+};
 
 
 
