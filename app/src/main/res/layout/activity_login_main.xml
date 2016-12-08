@@ -59,7 +59,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:sc="@mipmap/zz2"
+                android:src="@mipmap/zz2"
                 />
 </LinearLayout>
             <EditText
